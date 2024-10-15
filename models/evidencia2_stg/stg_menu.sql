@@ -3,7 +3,7 @@ WITH SRC AS (
 ),
 TRANSFORMED AS (
     SELECT
-        COST_OF_GOOD_USD,
+        COST_OF_GOODS_USD,
         ITEM_CATEGORY,
         ITEM_SUBCATEGORY,
         MENU_ID,
