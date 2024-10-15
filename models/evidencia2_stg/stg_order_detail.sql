@@ -1,15 +1,17 @@
 WITH SRC AS (
-    SELECT * FROM {{ source('pos', 'franchise') }}
+    SELECT * FROM {{ source('pos', 'order_detail') }}
 ),
 TRANSFORMED AS (
     SELECT
-        FRANCHISE_ID,
-        FIRST_NAME AS ONWER_FIRST_NAME,
-        LAST_NAME AS OWNER_LAST_NAME,
-        CITY AS OWNER_CITY,
-        COUNTRY AS OWNER_COUNTRY,
-        LOWER(E_MAIL) AS EMAIL,
-        PHONE_NUMBER
+        DISCOUNT_ID,
+        LINE_NUMBER,
+        MENU_ITEM_ID,
+        ORDER_DETAIL_ID,
+        ORDER_ID,
+        ORDER_ITEM_DISCOUNT_AMOUNT,
+        PRICE,
+        QUANTITY,
+        UNIT_PRICE
     FROM SRC
     )
 
