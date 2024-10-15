@@ -1,15 +1,22 @@
 WITH SRC AS (
-    SELECT * FROM {{ source('pos', 'franchise') }}
+    SELECT * FROM {{ source('pos', 'truck') }}
 ),
 TRANSFORMED AS (
     SELECT
+        COUNTRY,
+        EV_FLAG,
+        FRANCHISE_FLAG,
         FRANCHISE_ID,
-        FIRST_NAME AS ONWER_FIRST_NAME,
-        LAST_NAME AS OWNER_LAST_NAME,
-        CITY AS OWNER_CITY,
-        COUNTRY AS OWNER_COUNTRY,
-        LOWER(E_MAIL) AS EMAIL,
-        PHONE_NUMBER
+        ISO_COUNTRY_CODE,
+        ISO_REGION,
+        MAKE,
+        MENU_TYPE_ID,
+        MODEL,
+        PRIMARY_CITY,
+        REGION,
+        TRUCK_ID,
+        TRUCK_OPENING_DATE,
+        YEAR
     FROM SRC
     )
 
