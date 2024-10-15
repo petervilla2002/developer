@@ -1,15 +1,15 @@
 WITH SRC AS (
-    SELECT * FROM {{ source('pos', 'franchise') }}
+    SELECT * FROM {{ source('pos', 'location') }}
 ),
 TRANSFORMED AS (
     SELECT
-        FRANCHISE_ID,
-        FIRST_NAME AS ONWER_FIRST_NAME,
-        LAST_NAME AS OWNER_LAST_NAME,
-        CITY AS OWNER_CITY,
-        COUNTRY AS OWNER_COUNTRY,
-        LOWER(E_MAIL) AS EMAIL,
-        PHONE_NUMBER
+        CITY,
+        COUNTRY,
+        ISO_COUNTRY_CODE,
+        LOCATION,
+        LOCATION_ID,
+        PLACEKEY,
+        REGION
     FROM SRC
     )
 
