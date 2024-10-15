@@ -3,13 +3,13 @@ WITH SRC AS (
 ),
 TRANSFORMED AS (
     SELECT
-        CITY,
-        COUNTRY,
+        UPPER(CITY),
+        UPPER(COUNTRY),
         ISO_COUNTRY_CODE,
-        LOCATION,
+        UPPER(LOCATION),
         LOCATION_ID,
         PLACEKEY,
-        REGION
+        UPPER(REGION)
     FROM SRC
     )
 
