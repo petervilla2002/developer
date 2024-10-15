@@ -1,15 +1,19 @@
 WITH SRC AS (
-    SELECT * FROM {{ source('pos', 'franchise') }}
+    SELECT * FROM {{ source('pos', 'menu') }}
 ),
 TRANSFORMED AS (
     SELECT
-        FRANCHISE_ID,
-        FIRST_NAME AS ONWER_FIRST_NAME,
-        LAST_NAME AS OWNER_LAST_NAME,
-        CITY AS OWNER_CITY,
-        COUNTRY AS OWNER_COUNTRY,
-        LOWER(E_MAIL) AS EMAIL,
-        PHONE_NUMBER
+        COST_OF_GOOD_USD,
+        ITEM_CATEGORY,
+        ITEM_SUBCATEGORY,
+        MENU_ID,
+        MENU_ITEM_HEALTH_METRICS_OBJ,
+        MENU_ITEM_ID,
+        MENU_ITEM_NAME AS ITEM_NAME,
+        MENU_TYPE,
+        MENU_TYPE_ID,
+        SALE_PRICE_USD,
+        TRUCK_BRAND_NAME
     FROM SRC
     )
 
