@@ -1,15 +1,24 @@
 WITH SRC AS (
-    SELECT * FROM {{ source('pos', 'franchise') }}
+    SELECT * FROM {{ source('pos', 'order_header') }}
 ),
 TRANSFORMED AS (
     SELECT
-        FRANCHISE_ID,
-        FIRST_NAME AS ONWER_FIRST_NAME,
-        LAST_NAME AS OWNER_LAST_NAME,
-        CITY AS OWNER_CITY,
-        COUNTRY AS OWNER_COUNTRY,
-        LOWER(E_MAIL) AS EMAIL,
-        PHONE_NUMBER
+        CUSTOMER_ID,
+        DISCOUNT_ID,
+        LOCATION_ID,
+        ORDER_AMOUNT,
+        ORDER_CHANNEL,
+        ORDER_CURRENCY,
+        ORDER_DISCOUNT_AMOUNT,
+        ORDER_ID,
+        ORDER_TAX_AMOUNT,
+        ORDER_TOTAL,
+        ORDER_TS,
+        SERVED_TS,
+        SHIFT_END_TIME,
+        SHIFT_ID,
+        SHIFT_START_TIME,
+        TRUCK_ID
     FROM SRC
     )
 
