@@ -1,5 +1,5 @@
 SWITH l1_franchise AS (
-SELECT * FROM {{ ref('l1_franchise') }}
+SELECT * FROM {{ ref('l1_franchises') }}
 ),
 deduped AS (
 SELECT *
